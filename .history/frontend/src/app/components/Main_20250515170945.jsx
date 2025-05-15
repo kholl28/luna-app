@@ -5,7 +5,7 @@ import VideoBg from '../assets/background.mp4'
 const Main = () => {
     return (
         <div className='main'>
-            <video src={VideoBg} />
+            <video src={background} />
         </div>
     )
 }

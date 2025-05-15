@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+
 "use client";// App.js
 
 // import { BrowserRouter, Routes, Route } from 'react-raouter-dom';

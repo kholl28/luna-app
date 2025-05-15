@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+
 import React, { useEffect, useState } from 'react';
 
 // Simple date utilities to replace date-fns

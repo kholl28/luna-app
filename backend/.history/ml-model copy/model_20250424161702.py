@@ -1,0 +1,26 @@
+# Importing required libraries
+import pandas as pd
+import pickle
+
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import root_mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV, cross_val_score
+
+from datetime import datetime, date, timedelta
+
+# import dataset
+df = pd.read_csv('https://github.com/kholl28/data/raw/refs/heads/main/final_df.csv')
+
+X = df[['Cycle_1', 'Cycle_2', 'Age', 'BMI']] # denote all predictos with uppercase X
+y = df['Cycle_3'] # denote target (outcome variable) with lowercase Y
+
+'''
+# THIS MODEL SECTION WILL EVENTUALLY BE CHANGED TO WHICHEVER MODEL IS FOUND TO BE BEST DURING MACHINE LEARNING FINAL PROJECT
+# '''
+
+model = RandomForestRegressor(random_state = 42) # final model 
+model.fit(X, y) # fitting the model
+
+pickle.dump(model, open('model.pkl', 'wb')) # save the model
+
+print(model.predict)

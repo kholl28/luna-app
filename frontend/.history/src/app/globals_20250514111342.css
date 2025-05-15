@@ -1,0 +1,353 @@
+@import "tailwindcss";
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
+:root {
+  --background: url("/background.gif"); /* background image */
+  --foreground: #cbcbcb;
+}
+
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-geist-sans: 'Roboto', sans-serif;
+  --font-geist-mono: 'Courier New', monospace;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  background-size: cover;
+  color: var(--foreground);
+  font-family: Segoe UI;
+}
+
+/* --------------------------- */
+
+/* TEXT */
+
+/* x-small text */
+.verdana-xs {
+  font-family: 'Verdana';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 13px
+}
+
+.verdana-xs-italic {
+  font-family: 'Verdana';
+  font-weight: normal;
+  font-style: italic;
+  font-size: 13px
+}
+
+.verdana-s {
+  font-family: 'Verdana';
+  font-weight: normal;
+  font-style: italic;
+  font-size: 14px
+}
+
+.verdana-s-normal {
+  font-family: 'Verdana';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px
+}
+
+/* small text */
+.verdana-small {
+  font-family: 'Verdana';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px
+}
+
+/* large text */
+.verdana-large {
+  font-family: 'Verdana';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+}
+
+/* XL text */
+.verdana-xl {
+  font-family: 'Verdana';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 25px;
+}
+
+/* --------------------------- */
+
+/* CONTAINERS */
+
+/* containers */
+
+.cycle_container {
+  flex: 1;
+  display: 'flex';
+  border: '1px solid transparent';
+  padding: '1rem';
+  margin: '1rem';
+  border-radius: '8px';
+  background: '#f9f9f9';
+}
+
+/* input boxes */
+
+/* smallest box for numbers with 1 digits max*/
+#ip0 {
+  border-radius: 20px;
+  border: 2px solid rgba(196, 196, 196, 0.2);
+  padding: 13px; 
+  width: 45px;
+  height: 8px;    
+}
+
+/* small box for numbers with 2 digits max*/
+#ip1 {
+  border-radius: 20px;
+  border: 2px solid rgba(196, 196, 196, 0.2);
+  padding: 13px; 
+  width: 55px;
+  height: 8px;    
+}
+
+/* medium box for numbers with 3 digits max*/
+#ip2 {
+  border-radius: 20px;
+  border: 2px solid rgba(196, 196, 196, 0.2);
+  padding: 13px; 
+  width: 65px;
+  height: 8px;    
+}
+
+/* large box for text */
+#ip3 {
+  border-radius: 20px;
+  border: 2px solid rgba(196, 196, 196, 0.2);
+  padding: 13px; 
+  width: 150px;
+  height: 8px;    
+}
+
+/* input box textfields */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* --------------------------- */
+
+/* padding & positioning */
+
+.padding-class {
+  padding-bottom: 100px;
+}
+
+.padding-class-less {
+  padding-bottom: 50px;
+}
+
+.padding-class-top-less {
+  padding-top: 50px;
+}
+
+.padding-class-left {
+  padding-left: 50px;
+}
+
+.padding-class-bottom {
+  padding-bottom: 10px;
+}
+
+.padding-class-top {
+  padding-top: 100px;
+  padding-bottom: 10px;
+}
+
+.padding-class-toppest {
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.padding-class-aroundish {
+  padding-bottom: 10px;
+  padding-top: 2px;
+}
+
+.padding-class-around {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.padding-class-arounder {
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.padding-class-aroundest {
+  padding-bottom: 115px;
+  padding-top: 10px;
+}
+
+/* --------------------------- */
+
+/* fade-in animation */
+
+.hidden-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 2s ease-in; /* 3 second ease in */
+}
+
+.fade-text {
+  opacity: 0;
+  transition: opacity 1.5s ease-in; /* 1.5 second ease in */
+}
+
+.fade-text2 {
+  opacity: 0;
+  transition: opacity 4s ease-in; /* 3 second ease in */
+}
+
+.fade-text3 {
+  opacity: 0;
+  transition: opacity 8s ease-in; /* 3 second ease in */
+}
+
+.fade-text.visible {
+  opacity: 1;
+}
+
+.fade-text2.visible {
+  opacity: 1;
+}
+
+.fade-text3.visible {
+  opacity: 1;
+}
+
+/* --------------------------- */
+
+/* react calendar */
+
+.hidden-date {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 2s ease-in; /* 3 second ease in */
+}
+
+.react-calendar { 
+  width: 437.5px; /* Increased by 1.25 times */
+  max-width: 100%;
+  background-color: #1f4370;
+  color: #f8f8f9;
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+  line-height: 3.125em; /* Increased by 1.25 times */
+}
+.react-calendar__navigation button {
+  color: #f8f8f9;
+  font-weight: bold;
+  min-width: 55px; /* Increased by 1.25 times */
+  background: none;
+  font-size: 21.25px; /* Increased by 1.25 times */
+  margin-top: 10px; /* Increased by 1.25 times */
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #6f48eb33;
+}
+.react-calendar__navigation button[disabled] {
+  background-color: #1f4370;
+}
+abbr[title] {
+  text-decoration: none;
+}
+/* .react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+} */
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #ffd392;
+  color: #13294b;
+  border-radius: 7.5px; /* Increased by 1.25 times */
+}
+.react-calendar__tile--now {
+  background: #6f48eb33;
+  border-radius: 7.5px; /* Increased by 1.25 times */
+  color: #000000;
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #6f48eb33;
+  border-radius: 7.5px; /* Increased by 1.25 times */
+  font-weight: bold;
+  color: #f2a499;
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #f8f8fa;
+}
+.react-calendar__tile--active {
+  background: #f2a499;
+  border-radius: 7.5px; /* Increased by 1.25 times */
+  font-weight: bold;
+  color: #b93320;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #f2a499;
+  color: #b93320;
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background: #fee2c0;
+  color: #13294b;
+}
+.react-calendar__tile--range {
+  background: #ffd1d1;
+  color: #b93320;
+  border-radius: 0;
+}
+.react-calendar__tile--rangeStart {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 7.5px; /* Increased by 1.25 times */
+  border-bottom-left-radius: 7.5px; /* Increased by 1.25 times */
+  background: #f2a499;
+  color: #b93320;
+}
+.react-calendar__tile--rangeEnd {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 7.5px; /* Increased by 1.25 times */
+  border-bottom-right-radius: 7.5px; /* Increased by 1.25 times */
+  background: #f2a499;
+  color: #b93320;
+}
+
+ /* --------------------------- */

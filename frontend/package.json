@@ -1,0 +1,38 @@
+{
+  "name": "period_predictor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.2.5",
+    "@mui/icons-material": "^7.0.0",
+    "@mui/material": "^7.0.1",
+    "@mui/styled-engine-sc": "^7.0.0",
+    "date-fns": "^4.1.0",
+    "mc-datepicker": "^0.6.5",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-calendar": "^5.1.0",
+    "react-dom": "^19.0.0",
+    "react-loading-overlay": "^1.0.1",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.4.0",
+    "recharts": "^2.15.3",
+    "redux": "^5.0.1",
+    "sass": "^1.86.0",
+    "styled-components": "^6.1.17"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "eslint": "9.23.0",
+    "eslint-config-next": "15.2.4",
+    "tailwindcss": "^4"
+  }
+}

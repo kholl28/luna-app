@@ -1,4 +1,4 @@
-import os
+
 """
 # Menstrual Cycle Prediction Tool Using Age and BMI as Secondary Predictor Variables
 

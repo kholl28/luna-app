@@ -31,7 +31,7 @@ from model import BMICalculator, X, y
 
 static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'out')
 
-app = Flask(__name__, static_folder=static_path, static_url_path='')
+app = Flask(__name__, static_folder='frontend/out', static_url_path='')
 CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type"]}})
 
 # Load the machine learning model
@@ -44,10 +44,7 @@ def serve_index():
 
 @app.route('/<path:path>')
 def serve_static(path):
-    if os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder, 'index.html')
+    return send_from_directory(app.static_folder, path)
 
 @app.route('/predict', methods=['POST'])
 def predict():

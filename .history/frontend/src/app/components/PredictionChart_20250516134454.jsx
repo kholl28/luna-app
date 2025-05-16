@@ -105,9 +105,6 @@ const PredictionChart = ({ predictionDate, lowerBound, upperBound }) => {
   const upperIndex = findDateIndex(upperBoundObj);
   const predictedIndex = findDateIndex(predictedDateObj);
 
-  // Log the indices for debugging
-  console.log("Date indices:", { lowerIndex, upperIndex, predictedIndex });
-
   return (
     <div className="w-full max-w-4xl mx-auto bg-white rounded-lg shadow p-6">
       <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
@@ -180,12 +177,17 @@ const PredictionChart = ({ predictionDate, lowerBound, upperBound }) => {
       </div>
     </div>
   );
-} catch (error) {
-  console.error("Error rendering PredictionChart:", error);
-  return <div className="p-4 text-center text-red-500">
-    Error rendering chart: {error.message}
-  </div>;
-}
 };
+
+// // Example component to demonstrate the chart with fixed dates
+// const PredictionChartDemo = () => {
+//   return (
+//     <PredictionChart
+//       predictionDate="2025-04-28"
+//       lowerBound="2025-04-25"
+//       upperBound="2025-05-01"
+//     />
+//   );
+// };
 
 export default PredictionChart;

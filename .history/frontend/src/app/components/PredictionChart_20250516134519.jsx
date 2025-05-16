@@ -180,12 +180,17 @@ const PredictionChart = ({ predictionDate, lowerBound, upperBound }) => {
       </div>
     </div>
   );
-} catch (error) {
-  console.error("Error rendering PredictionChart:", error);
-  return <div className="p-4 text-center text-red-500">
-    Error rendering chart: {error.message}
-  </div>;
-}
 };
+
+// // Example component to demonstrate the chart with fixed dates
+// const PredictionChartDemo = () => {
+//   return (
+//     <PredictionChart
+//       predictionDate="2025-04-28"
+//       lowerBound="2025-04-25"
+//       upperBound="2025-05-01"
+//     />
+//   );
+// };
 
 export default PredictionChart;

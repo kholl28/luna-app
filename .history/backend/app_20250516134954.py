@@ -173,7 +173,7 @@ def predict():
         upper_bound_date = cycle2_start + timedelta(days=ci_upper) + timedelta(days=1)
 
         # Log the dates being generated
-        print(f"Generated prediction dates - main: {predicted_date}, lower: {lower_bound_date}, upper: {upper_bound_date}")
+        print(f"Generated prediction dates - main: {predicted_date}, lower: {lower_bound_date}, upper: {upper_bound_str}")
         
         # Create the result object
         result = {
@@ -184,8 +184,6 @@ def predict():
             "ci_lower": float(ci_lower),
             "ci_upper": float(ci_upper)
         }
-        # Log the final result being returned
-        print("Returning prediction result:", result)
         
         return jsonify(result)
         

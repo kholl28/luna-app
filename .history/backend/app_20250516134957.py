@@ -184,8 +184,6 @@ def predict():
             "ci_lower": float(ci_lower),
             "ci_upper": float(ci_upper)
         }
-        # Log the final result being returned
-        print("Returning prediction result:", result)
         
         return jsonify(result)
         

@@ -17,7 +17,7 @@ User-inputted information will be piped into the final machine learning model in
 
 # IMPORTING REQUIRED PACKAGES
 # ==================
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime, timedelta
 import numpy as np
@@ -29,20 +29,16 @@ import traceback
 # import from model.py
 from model import BMICalculator, X, y
 
-app = Flask(__name__, static_folder='frontend/out', static_url_path='')
+app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type"]}})
 
 # Load the machine learning model
 model = pickle.load(open('./model.pkl', 'rb'))
 
 # Add a root endpoint for health checks
-@app.route("/")
-def serve_index():
-    return send_from_directory(app.static_folder, "index.html")
-
-@app.route('/<path:path>')
-def serve_static(path):
-    return send_from_directory(app.static_folder, path)
+@app.route('/')
+def hello():
+    return jsonify({"status": "API is running"})
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -172,9 +168,6 @@ def predict():
         lower_bound_date = cycle2_start + timedelta(days=ci_lower) + timedelta(days=1)
         upper_bound_date = cycle2_start + timedelta(days=ci_upper) + timedelta(days=1)
 
-        # Log the dates being generated
-        print(f"Generated prediction dates - main: {predicted_date}, lower: {lower_bound_date}, upper: {upper_bound_date}")
-        
         # Create the result object
         result = {
             "predictionDate": predicted_date.strftime("%Y-%m-%d"),
@@ -184,8 +177,6 @@ def predict():
             "ci_lower": float(ci_lower),
             "ci_upper": float(ci_upper)
         }
-        # Log the final result being returned
-        print("Returning prediction result:", result)
         
         return jsonify(result)
         
@@ -196,4 +187,4 @@ def predict():
 
 # Run the app
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=500, debug=True)

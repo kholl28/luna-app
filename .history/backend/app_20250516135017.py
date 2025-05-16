@@ -186,7 +186,6 @@ def predict():
         }
         # Log the final result being returned
         print("Returning prediction result:", result)
-        
         return jsonify(result)
         
     except Exception as e:

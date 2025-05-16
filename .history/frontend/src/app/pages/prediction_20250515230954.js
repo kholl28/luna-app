@@ -108,9 +108,6 @@ const Prediction = ({ setCurrentPage, currentPage, result, setResult, setName, U
       );
     }
 
-    // Add debug console log to check the data being passed to PredictionChart
-    console.log("Data being passed to PredictionChart:", predictionData);
-
     return (
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center mb-10 text-center">
@@ -130,11 +127,7 @@ const Prediction = ({ setCurrentPage, currentPage, result, setResult, setName, U
           
           <div className="w-full max-w-lg md:max-w-xl lg:max-w-3xl mx-auto h-auto">
             {predictionData ? (
-               <PredictionChart 
-               predictionDate={predictionData.predictionDate}
-               lowerBound={predictionData.lowerBound}
-               upperBound={predictionData.upperBound}
-             />
+              <PredictionChart {...predictionData} />
             ) : (
               <p className="text-center">Unable to load prediction chart.</p>
             )}

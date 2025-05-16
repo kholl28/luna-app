@@ -153,12 +153,12 @@ const Prediction = ({ setCurrentPage, currentPage, result, setResult, setName, U
 
                 Indeed, relationships exist among the length of future cycles and the length of past cycles. For instance, the average menstrual cycle length for all women in the world is around 28 days, but this varies from 
                 person to person. Some people have shorter cycles on average, whereas others have longer ones. Once you know your average cycle length, this information can be used to predict future cycle lengths. Additionally, patterns exist among age and BMI 
-                (which is calculated from height and weight) and the average length of a person&apos;s menstrual cycle. <br /><br />
+                (which is calculated from height and weight) and the average length of a person's menstrual cycle. <br /><br />
 
                 Without explicitly being told this, the model is able to identify these relationships. Then, when a user (that&apos;s you!) provides the model with new, unseen data about <em>your</em> cycles and demographics, it is able
                 to predict the date of your next period.<br /><br />
 
-                This is because a <strong>menstrual cycle</strong> is defined as <strong>the time from the first day of a person&apos;s period to the day before the start date of their next period</strong>.<br /><br />
+                This is because a <strong>menstrual cycle</strong> is defined as <strong>the time from the first day of a person's period to the day before the start date of their next period</strong>.<br /><br />
                 
                 So, for example, if the model predicts that, based on your past three periods and your age and BMI, your next cycle will be 28 days long, it can take the date of your most recent period, add 28 days to it,
                 and then the day <em>after</em> those 28 days will be the date of your next period!<br /><br />

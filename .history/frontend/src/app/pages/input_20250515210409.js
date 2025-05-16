@@ -106,11 +106,9 @@ function Input({
         flexDirection: 'column',
         }}
       >
-        <Image
-          src="/predicting.gif"
-          alt="Loading spinner"
-          width={150}
-          height={150}
+        <img
+        src="/predicting.gif"
+        style={{ width: '150px', height: '150px' }}
         />
       </Backdrop>
       {children}

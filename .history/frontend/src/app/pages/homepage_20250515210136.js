@@ -58,7 +58,8 @@ function Homepage({ currentPage, setCurrentPage, UserName, setName }) {
       <div className={`verdana-small padding-class-top fade-text3 ${visible ? 'visible' : ''}`}>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="UserName">Let&#39;s start with your name:&nbsp;&nbsp;</label>
+          <label htmlFor="UserName">Let&#39;s start with your name:&nbsp;&nbsp;</label>
+
             <input
               type="text"
               id="ip3"

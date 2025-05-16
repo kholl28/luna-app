@@ -106,7 +106,7 @@ function Input({
         flexDirection: 'column',
         }}
       >
-        <Image
+                <Image
           src="/predicting.gif"
           alt="Loading spinner"
           width={150}

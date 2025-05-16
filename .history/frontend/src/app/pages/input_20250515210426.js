@@ -106,12 +106,12 @@ function Input({
         flexDirection: 'column',
         }}
       >
-        <Image
-          src="/predicting.gif"
-          alt="Loading spinner"
-          width={150}
-          height={150}
-        />
+              <Image
+        src="/predicting.gif"
+        alt="Loading spinner"
+        width={150}
+        height={150}
+      />
       </Backdrop>
       {children}
       </>

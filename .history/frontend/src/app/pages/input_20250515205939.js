@@ -1,6 +1,7 @@
+
+
 import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
-import Image from 'next/image';
 import { format, formatDistance, formatRelative, subDays } from 'date-fns';
 
 import '../app.css';
@@ -106,11 +107,9 @@ function Input({
         flexDirection: 'column',
         }}
       >
-        <Image
-          src="/predicting.gif"
-          alt="Loading spinner"
-          width={150}
-          height={150}
+        <img
+        src="/predicting.gif"
+        style={{ width: '150px', height: '150px' }}
         />
       </Backdrop>
       {children}

@@ -158,7 +158,7 @@ const Prediction = ({ setCurrentPage, currentPage, result, setResult, setName, U
                 Without explicitly being told this, the model is able to identify these relationships. Then, when a user (that&apos;s you!) provides the model with new, unseen data about <em>your</em> cycles and demographics, it is able
                 to predict the date of your next period.<br /><br />
 
-                This is because a <strong>menstrual cycle</strong> is defined as <strong>the time from the first day of a person&apos;s period to the day before the start date of their next period</strong>.<br /><br />
+                This is because a <strong>menstrual cycle</strong> is defined as <strong>the time from the first day of a person's period to the day before the start date of their next period</strong>.<br /><br />
                 
                 So, for example, if the model predicts that, based on your past three periods and your age and BMI, your next cycle will be 28 days long, it can take the date of your most recent period, add 28 days to it,
                 and then the day <em>after</em> those 28 days will be the date of your next period!<br /><br />

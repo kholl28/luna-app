@@ -59,6 +59,7 @@ function Homepage({ currentPage, setCurrentPage, UserName, setName }) {
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="UserName">Let&#39;s start with your name:&nbsp;&nbsp;</label>
+
             <input
               type="text"
               id="ip3"

@@ -44,27 +44,12 @@ model = pickle.load(open('./model.pkl', 'rb'))
 def serve_index():
     return send_from_directory('out', 'index.html')
 
-# Serve all files from /_next/ route
-@app.route('/_next/<path:filename>')
-def serve_next_static(filename):
-    return send_from_directory('out/_next', filename)
-
-# Serve any other static file under / (except routes you handle)
-@app.route('/<path:filename>')
-def serve_static(filename):
-    return send_from_directory('out', filename)
-
 @app.route('/<path:path>')
 def serve_static(path):
     if os.path.exists(os.path.join(app.static_folder, path)):
         return send_from_directory(app.static_folder, path)
     else:
         return send_from_directory(app.static_folder, "index.html")
-    
-    @app.route('/favicon.ico')
-def favicon():
-    return send_from_directory('out', 'favicon.ico')
-
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -79,7 +64,7 @@ def predict():
         print("Received data:", data)
 
         # Check if all required fields are present
-        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches", "Weight"]
+        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches"]
         for field in required_fields:
             if field not in data:
                 return jsonify({"error": f"Missing required field: {field}"}), 400

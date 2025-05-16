@@ -60,11 +60,6 @@ def serve_static(path):
         return send_from_directory(app.static_folder, path)
     else:
         return send_from_directory(app.static_folder, "index.html")
-    
-    @app.route('/favicon.ico')
-def favicon():
-    return send_from_directory('out', 'favicon.ico')
-
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -79,7 +74,7 @@ def predict():
         print("Received data:", data)
 
         # Check if all required fields are present
-        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches", "Weight"]
+        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches"]
         for field in required_fields:
             if field not in data:
                 return jsonify({"error": f"Missing required field: {field}"}), 400

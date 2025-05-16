@@ -49,10 +49,6 @@ def serve_next_static(filename):
 def serve_static(filename):
     return send_from_directory('out', filename)
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory('out', 'favicon.ico')
-
 # Serve index.html for root route
 @app.route('/')
 def serve_index():

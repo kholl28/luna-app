@@ -53,6 +53,7 @@ def serve_static(filename):
 def favicon():
     return send_from_directory('out', 'favicon.ico')
 
+
 # Serve index.html for root route
 @app.route('/')
 def serve_index():

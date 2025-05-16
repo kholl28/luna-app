@@ -33,30 +33,23 @@ from model import BMICalculator, X, y
 
 # static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'out')
 
-app = Flask(__name__, static_folder='out')
+app = Flask(__name__, static_folder=static_path, static_url_path='')
 CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type"]}})
 
 # Load the machine learning model
 model = pickle.load(open('./model.pkl', 'rb'))
 
-# Serve all files from /_next/ route
-@app.route('/_next/<path:filename>')
-def serve_next_static(filename):
-    return send_from_directory('out/_next', filename)
-
-# Serve any other static file under / (except routes you handle)
-@app.route('/<path:filename>')
-def serve_static(filename):
-    return send_from_directory('out', filename)
-
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory('out', 'favicon.ico')
-
-# Serve index.html for root route
-@app.route('/')
+# Add a root endpoint for health checks
+@app.route("/")
 def serve_index():
-    return send_from_directory('out', 'index.html')
+    return send_from_directory(app.static_folder, "index.html")
+
+@app.route('/<path:path>')
+def serve_static(path):
+    if os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/predict', methods=['POST'])
 def predict():

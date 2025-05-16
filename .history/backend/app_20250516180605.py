@@ -31,18 +31,13 @@ import traceback
 # import from model.py
 from model import BMICalculator, X, y
 
-static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'out')
+# static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend', 'out')
 
 app = Flask(__name__, static_folder=static_path, static_url_path='')
 CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"], "allow_headers": ["Content-Type"]}})
 
 # Load the machine learning model
 model = pickle.load(open('./model.pkl', 'rb'))
-
-# Serve all files from /_next/ route
-@app.route('/_next/<path:filename>')
-def serve_next_static(filename):
-    return send_from_directory('out/_next', filename)
 
 # Add a root endpoint for health checks
 @app.route("/")
@@ -69,7 +64,7 @@ def predict():
         print("Received data:", data)
 
         # Check if all required fields are present
-        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches", "Weight"]
+        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches"]
         for field in required_fields:
             if field not in data:
                 return jsonify({"error": f"Missing required field: {field}"}), 400

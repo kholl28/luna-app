@@ -39,11 +39,6 @@ CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS
 # Load the machine learning model
 model = pickle.load(open('./model.pkl', 'rb'))
 
-# Serve all files from /_next/ route
-@app.route('/_next/<path:filename>')
-def serve_next_static(filename):
-    return send_from_directory('out/_next', filename)
-
 # Add a root endpoint for health checks
 @app.route("/")
 def serve_index():

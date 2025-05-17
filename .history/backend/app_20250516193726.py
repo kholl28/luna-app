@@ -64,7 +64,7 @@ def predict():
         print("Received data:", data)
 
         # Check if all required fields are present
-        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches, Weight"]
+        required_fields = ["thirdDate", "cycle_1", "cycle_2", "Age", "Feet", "Inches, ]
         for field in required_fields:
             if field not in data:
                 return jsonify({"error": f"Missing required field: {field}"}), 400
